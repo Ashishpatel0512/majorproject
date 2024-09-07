@@ -1,0 +1,80 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+    
+    <!-- <form  action="/update/<%= listing._id%>?_method=PUT"  method="post">
+<input type="text" value="<%=listing.title %>" name="listing[title]"><br><br>
+<input type="text" value="<%=listing.description %>" name="listing[description]"><br><br>
+<textarea name="listing[image]"  ><%=listing.image %></textarea><br><br>
+<input type="text" value="<%=listing.price %>" name="listing[price]"><br><br>
+<input type="text" value="<%=listing.location %>" name="listing[location]"><br><br>
+<input type="text" value="<%=listing.country %>" name="listing[country]"><br><br>
+<input type="submit" value="update">
+
+
+
+
+    </form> -->
+    <!-- aa kaam na apr to uper ni comment hatavi -->
+    <div class="row">
+
+        <div class="col-8 offset-2">
+           <h1 class="header">Edit</h1>
+           <form  action="/listings/update/<%= listing._id%>?_method=PUT"  method="post" novalidate  class="needs-validation">
+        <div class="mb-3">
+           <label for="title" class="form-lable">TITLE</label>
+           <input type="text" name="listing[title]" value="<%=listing.title %>" class="form-control" required><br>
+           <div class="invalid-feedback">
+            Please enter data
+          </div>
+        </div>
+  
+  <div class="mb-3">
+     <div>
+        <label for="description" class="form-lable">DESCRIPTION</label>
+        <input type="text" name="listing[description]" value="<%=listing.description %>" class="form-control" required><br>
+        <div class="invalid-feedback">
+         Please enter data
+       </div>
+     </div>
+     <div class="mb-3 ">
+        <label for="image" class="form-lable">IMAGE/URL</label>
+        <textarea name="listing[image]" id="abc" class="form-control" required><%=listing.image %></textarea><br>
+        <div class="invalid-feedback">
+         Please enter data
+       </div>
+     </div>
+     <div class="row">
+  
+  <div class="mb-3 col-md-4">
+     <label for="price" class="form-lable">PRICE</label>
+     <input type="text" name="listing[price]" value="<%=listing.price %>" class="form-control " required>
+     <div class="invalid-feedback">
+      Please enter data
+    </div>
+  </div>
+  <div class="mb-3 col-md-8" >
+     
+  
+     <label for="country" class="form-lable">COUNTRY</label>
+  
+     <input type="text" name="listing[country]" value="<%=listing.country %>"  class="form-control" required><br>
+     <div class="invalid-feedback">
+      Please enter data
+    </div>
+  
+  </div>
+  </div>
+  <div class="mb-3">
+     <label for="location" class="form-lable">LOCATION</label>
+  
+     <input type="text" name="listing[location]" value="<%=listing.location %>"  class="form-control" required><br><div class="invalid-feedback">
+      Please enter data
+    </div></div>
+  <div class="button"><input type="submit" value="ADD" class="btn btn-dark"></div>
+  
+     </form> 
+     </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+   
+<div class="row">
+    <div class="col-8 offset-2">
+   
+    <div class="card showimg"  >
+        <img src="<%= listing.image %>" class="card-img-top " alt="..." >
+        <div class="card-body">
+          <p class="card-text">
+            <h1><%=listing.title %></h1>
+            <br><h4 class="rupee">&#x20b9; <%=listing.price.toLocaleString("en-IN") %>
+            </h4>
+           <br> <h5><%=listing.description %></h5>
+            <br><h5><%=listing.location %></h5>
+             <br> <h5><%=listing.country %> </h5>
+          </p>
+        </div>
+      </div>
+
+      <br>
+    
+      <div class="flex">
+    <form action="/listings/edit/<%=listing._id %>" method="get">
+
+        <input type="submit" value="edit" class="edit btn btn-dark">
+    </form>
+    <form action="/listings/delete/<%=listing._id %>?_method=delete" method="get">
+
+       <br> <input type="submit" value="delete" class="delete  btn btn-dark"><br><br>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="col-8 offset-2">
+
+<h3>Add-review</h3>
+<form action="/listings/review/<%=listing._id %>" method="post"   ><br>
+  <h6>comment:</h6> 
+  <textarea  class="card-img-top "  name="comment" name="[comment]"  placeholder="      enter comment"></textarea><br><br>
+  <h6>rating:</h6><input type="range" name="[rating]" min="1" max="5" class="card-img-top "><br><br>
+  <input type="submit" value="submit">
+  
+</form>
+</div>
+</div>
+<hr><br><br>
+<h1 class="col-8 offset-3">show review</h1>
+<% for(review of listing.reviews ) {%>
+  <div class="row" >
+ <div class=" card col-5 offset-3  mb-3">
+    <div class="card-body ">
+      <h5 class="card-title ">@AshishPatel</h5>
+      <p class="card-text"><%=review.comment%></p>
+      <p class="card-text "><b><%=review.rating%> stars</b></p>
+      <form  method="post" action="/listings/<%=listing._id %>/review/ <%=review._id %>?_method=DELETE" >
+        <input type="submit" value="submit">
+         </form>
+     </div>
+  </div>
+  </div>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body>
+   <div class="row">
+
+      <div class="col-8 offset-2">
+         <h1 class="header">ADD-LIST</h1>
+
+   <form method="post"  action="/listings"  novalidate  class="needs-validation">
+      <div class="mb-3">
+         <label for="title" class="form-lable">TITLE</label>
+         <input type="text" name="listing[title]" placeholder="enter title" class="form-control" required><br>
+         <div class="invalid-feedback">
+            Please choose a title
+          </div>
+      </div>
+
+<div class="mb-3">
+   <div>
+      <label for="description" class="form-lable">DESCRIPTION</label>
+      <input type="text" name="listing[description]" placeholder="enter description" class="form-control" required><br>
+      <div class="invalid-feedback">
+         Please choose a description       </div>
+   </div>
+   <div class="mb-3 ">
+      <label for="image" class="form-lable">IMAGE/URL</label>
+      <textarea name="listing[image]" placeholder="enter url/link" id="abc" class="form-control"></textarea><br>
+      <div class="valid-feedback">
+         valid data
+      </div>
+   </div>
+   <div class="row">
+
+<div class="mb-3 col-md-4">
+   <label for="price" class="form-lable">PRICE</label>
+   <input type="text" name="listing[price]" placeholder="enter price" class="form-control" required>
+   <div class="invalid-feedback">
+      Please choose a price.
+    </div>
+</div>
+<div class="mb-3 col-md-8" >
+   
+
+   <label for="country" class="form-lable">COUNTRY</label>
+
+   <input type="text" name="listing[country]" placeholder="enter country" class="form-control" required><br>
+   <div class="invalid-feedback">
+      Please choose a country.
+    </div>
+
+</div>
+</div>
+<div class="mb-3">
+   <label for="location" class="form-lable">LOCATION</label>
+
+   <input type="text" name="listing[location]" placeholder="enter location" class="form-control" required><br></div>
+
+<input type="submit" value="ADD" class="btn btn-dark">
+   </form> 
+   </div>
+</div>
+</body>
+</html>
